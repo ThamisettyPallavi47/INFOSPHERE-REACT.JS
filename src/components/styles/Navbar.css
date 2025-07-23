@@ -1,0 +1,173 @@
+
+.navbar {
+  background-color: #004080;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin:0;
+}
+
+.navbar-logo a {
+  color: white;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.navbar-categories {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar-categories li a,
+.navbar-categories li span {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 2px;
+  cursor: pointer;
+  transition: border-bottom 0.3s ease;
+}
+
+.navbar-categories li a.active,
+.navbar-categories li a:hover,
+.navbar-categories li span:hover {
+  border-bottom: 2px solid white;
+}
+
+/* Dropdown container */
+.navbar-categories .dropdown {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #004080;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  min-width: 160px;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #002050;
+  border-radius: 4px;
+}
+.theme-toggle-btn {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.2);
+}
+/* Dark mode navbar styles */
+body.dark-mode .navbar {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .navbar a,
+body.dark-mode .navbar span {
+  color: #ffffff;
+}
+
+body.dark-mode .navbar a:hover,
+body.dark-mode .navbar .active {
+  border-bottom: 2px solid #ffffff;
+}
+
+
+/* Responsive Styles */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.5rem;
+  }
+
+  .navbar-categories {
+    gap: 1rem;
+  }
+
+  .navbar-categories li a,
+  .navbar-categories li span {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.3rem;
+  }
+
+  .navbar-categories {
+    gap: 0.75rem;
+  }
+
+  .navbar-categories li a,
+  .navbar-categories li span {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.1rem;
+  }
+
+  .navbar-categories {
+    gap: 0.5rem;
+  }
+
+  .navbar-categories li a,
+  .navbar-categories li span {
+    font-size: 0.8rem;
+    padding-bottom: 1px;
+  }
+
+  /* Make dropdown menu full width for small devices */
+  .dropdown-menu {
+    min-width: 120px;
+  }
+}

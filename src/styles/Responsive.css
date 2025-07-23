@@ -1,0 +1,25 @@
+/* Responsive basics */
+@media (max-width: 768px) {
+  .navbar-categories {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .blog-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 90% !important;
+    margin: 1rem 0;
+  }
+
+  .category-list {
+    justify-content: center;
+  }
+
+  .category-item {
+    width: 45%;
+  }
+}

@@ -1,0 +1,199 @@
+/* =================== BASE STYLES =================== */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.category-item {
+  width: 140px;
+  text-align: center;
+  color: #004080;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #004080;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #004080;
+}
+
+.category-item:hover {
+  background-color: #004080;
+  color: white;
+}
+.welcome-banner h1{
+   color: #004080;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.welcome-banner {
+  
+  color: #222;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.welcome-banner h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-banner p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.banner-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.banner-highlights span {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  user-select: none;
+}
+
+.featured-articles h2 {
+  color: #004080;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.trending-categories{
+  margin-top: 2rem;
+}
+.trending-categories h2 {
+  color: #004080;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+   margin-top: 3rem;
+}
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.blog-list > div {
+  flex: 1 1 30%;
+  max-width: 30%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-list > div > * {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =================== RESPONSIVE BREAKPOINTS =================== */
+
+/* Tablet and small laptop (600px - 1023px) */
+@media (max-width: 1023px) {
+  .featured-articles h2 {
+    font-size: 2rem;
+  }
+
+  .category-item {
+    width: 120px;
+    font-size: 0.9rem;
+  }
+
+  .category-item img {
+    height: 90px;
+  }
+
+  .blog-list > div {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* Mobile and large phones (480px - 767px) */
+@media (max-width: 767px) {
+  .featured-articles h2 {
+    font-size: 1.8rem;
+  }
+
+  .category-item {
+    width: 100px;
+    font-size: 0.8rem;
+  }
+
+  .category-item img {
+    height: 80px;
+  }
+
+  /* Keep 2 blogs per row */
+  .blog-list > div {
+    flex: 1 1 48%;
+    max-width: 48%;
+  }
+}
+
+/* Small Mobile (<480px) */
+@media (max-width: 479px) {
+  .featured-articles h2 {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .category-list {
+    gap: 0.5rem;
+  }
+
+  .category-item {
+    width: 90px;
+    font-size: 0.75rem;
+    padding: 0.3rem;
+  }
+
+  .category-item img {
+    height: 70px;
+  }
+
+  .blog-list {
+    row-gap: 1rem;
+  }
+
+  /* 1 blog per row for very small screens */
+  .blog-list > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

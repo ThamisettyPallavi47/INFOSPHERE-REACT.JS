@@ -1,0 +1,53 @@
+
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --link-color: #004080;
+  --link-hover-color: #002050;
+}
+
+/* Dark mode */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --link-color: #66aaff;
+  --link-hover-color: #aaddff;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+ 
+  margin:0;
+}
+
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+body.dark-mode .footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+/* Dark mode text styles */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode li,
+body.dark-mode a,
+body.dark-mode label {
+  color: #ffffff ;
+}
+
