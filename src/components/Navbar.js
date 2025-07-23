@@ -1,6 +1,9 @@
 
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+
+import { Link as ScrollLink } from 'react-scroll';
+
 import '../components/styles/Navbar.css';
 
 const categories = [
@@ -10,7 +13,9 @@ const categories = [
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  // const isHome = location.pathname === '/';
+  const isHome = location.pathname === '/' || location.pathname === '/INFOSPHERE-REACT.JS/';
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
@@ -20,13 +25,48 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
       </div>
 
       <ul className="navbar-categories">
-        {isHome ? (
+        {/* {isHome ? (
           <>
             <li><a href="#trending-categories">Trending Categories</a></li>
             <li><a href="#about-us-home">About</a></li>
             <li><a href="#contact-us-home">Contact</a></li>
           </>
-        ) : (
+        ) : ( */}
+        {isHome ? (
+  <>
+    <li>
+      <ScrollLink
+        to="trending-categories"
+        smooth={true}
+        duration={500}
+        offset={-80} // adjust if your navbar overlaps
+      >
+        Trending Categories
+      </ScrollLink>
+    </li>
+    <li>
+      <ScrollLink
+        to="about-us-home"
+        smooth={true}
+        duration={500}
+        offset={-80}
+      >
+        About
+      </ScrollLink>
+    </li>
+    <li>
+      <ScrollLink
+        to="contact-us-home"
+        smooth={true}
+        duration={500}
+        offset={-80}
+      >
+        Contact
+      </ScrollLink>
+    </li>
+  </>
+) : (
+
           <>
             <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
             <li
