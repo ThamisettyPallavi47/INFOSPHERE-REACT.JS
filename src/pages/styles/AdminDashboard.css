@@ -1,0 +1,31 @@
+.admin-dashboard {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  
+  border-radius: 8px;
+}
+
+.admin-form input,
+.admin-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.admin-form button {
+  padding: 0.7rem 2rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.admin-dashboard.dark-mode h2 {
+  color: #ffffff !important;
+}
+

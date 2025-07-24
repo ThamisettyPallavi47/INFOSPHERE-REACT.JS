@@ -23,8 +23,7 @@ export default function BlogDetails() {
     async function fetchData() {
       const postRes = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
       const userRes = await axios.get(`https://jsonplaceholder.typicode.com/users/${postRes.data.userId}`);
-      // const postRes = await axios.get(`https://dummyjson.com/posts/${id}`);
-      // const userRes = await axios.get(`https://dummyjson.com/users/${postRes.data.userId}`);
+      
       setPost({
         ...postRes.data,
         publishDate: new Date().toLocaleDateString(),

@@ -15,7 +15,9 @@ const categories = [
   { name: 'Food', img: `${process.env.PUBLIC_URL}/assets/images/food.jpg` },
   { name: 'Science', img: `${process.env.PUBLIC_URL}/assets/images/science.jpg` },
   { name: 'Books', img: `${process.env.PUBLIC_URL}/assets/images/book.jpg` },
- 
+  { name: 'Magazine', img: `${process.env.PUBLIC_URL}/assets/images/magazine.jpg` },
+  { name: 'Entertainment', img: `${process.env.PUBLIC_URL}/assets/images/entertainement.jpg` },
+  { name: 'Articles', img: `${process.env.PUBLIC_URL}/assets/images/article.jpg` },
 ];
 
 export default function CategoryList() {

@@ -10,6 +10,7 @@ import BlogDetails from './pages/BlogDetails';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Author from './pages/Author';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/category/:categoryName" element={<Category />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/author/:id" element={<Author />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

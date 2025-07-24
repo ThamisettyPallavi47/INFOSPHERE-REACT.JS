@@ -17,12 +17,14 @@ export default function Category() {
   const postsPerPage = 6;
   
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts?_limit=100')
+    axios.get('https://jsonplaceholder.typicode.com/posts?_limit=500')
+    
     
       .then(async (res) => {
         const users = await axios.get('https://jsonplaceholder.typicode.com/users');
+      
        
-        const categories = ['finance', 'technology', 'health', 'education', 'politics', 'business', 'travel', 'sports', 'lifestyle', 'science', 'books'];
+        const categories = ['finance', 'technology', 'health', 'education', 'politics', 'business', 'travel', 'sports', 'lifestyle', 'science', 'books','food','entertainment','magazine','articles'];
 
         const mapped = res.data.map((post, index) => {
           const author = users.data.find(u => u.id === post.userId) || { id: 0, name: "Unknown" };

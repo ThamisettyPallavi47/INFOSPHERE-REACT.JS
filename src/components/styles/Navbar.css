@@ -171,3 +171,82 @@ body.dark-mode .navbar .active {
     min-width: 120px;
   }
 }
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    background-color: #004080; /* Your navbar background */
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-logo {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .navbar-categories li {
+    list-style: none;
+    position: relative;
+  }
+
+  .navbar-categories li a,
+  .navbar-categories li span {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .navbar-categories li a:hover,
+  .navbar-categories li span:hover {
+    background-color: #0066cc;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #004080;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    width: max-content;
+    z-index: 999;
+  }
+
+  .navbar-categories li:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu li a {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    color: white;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #0066cc;
+  }
+}
+/* Dark Mode */
+.dark-mode .dropdown-menu {
+  background-color: black;
+  color: white;
+}

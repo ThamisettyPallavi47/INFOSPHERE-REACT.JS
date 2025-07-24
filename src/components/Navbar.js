@@ -8,7 +8,7 @@ import '../components/styles/Navbar.css';
 
 const categories = [
   "Finance", "Technology", "Health", "Education", "Politics",
-  "Business", "Travel", "Sports", "Lifestyle", "Books", "Science"
+  "Business", "Travel", "Sports", "Lifestyle", "Books", "Science","Food","Entertainment","Magazine","Articles"
 ];
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
@@ -94,6 +94,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
             </li>
             <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
             <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
+            <li><NavLink to="/admin" className={({ isActive }) => isActive ? 'active' : ''}>Admin</NavLink></li> {/* 👈 ADD THIS */}
           </>
         )}
 
