@@ -41,13 +41,22 @@ It supports blog categories, featured articles, article details, and includes bo
 > Store images in `/screenshots/` and update links accordingly.
 
 ### 🏠 Home Page
-![Home](./screenshots/home.png)
+![Home](./screenshots/home1.png)
+
+### 🏠 Home Page
+![Home](./screenshots/home2.png)
 
 ### 📚 Category Page
 ![Category](./screenshots/category.png)
 
 ### 📰 Blog Details Page
 ![Details](./screenshots/blogdetails.png)
+
+### 👩‍🦰 Author Page
+![Details](./screenshots/author.png)
+
+### 📖 About Page
+![Details](./screenshots/aboutus.png)
 
 ### 📬 Contact Page
 ![Contact](./screenshots/contact.png)
