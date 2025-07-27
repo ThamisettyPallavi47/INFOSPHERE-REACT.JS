@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/INFOSPHERE-REACT.JS/static/css/main.d2e216fb.css",
-    "main.js": "/INFOSPHERE-REACT.JS/static/js/main.2861b832.js",
+    "main.js": "/INFOSPHERE-REACT.JS/static/js/main.dcabe4ca.js",
     "index.html": "/INFOSPHERE-REACT.JS/index.html",
     "main.d2e216fb.css.map": "/INFOSPHERE-REACT.JS/static/css/main.d2e216fb.css.map",
-    "main.2861b832.js.map": "/INFOSPHERE-REACT.JS/static/js/main.2861b832.js.map"
+    "main.dcabe4ca.js.map": "/INFOSPHERE-REACT.JS/static/js/main.dcabe4ca.js.map"
   },
   "entrypoints": [
     "static/css/main.d2e216fb.css",
-    "static/js/main.2861b832.js"
+    "static/js/main.dcabe4ca.js"
   ]
 }
