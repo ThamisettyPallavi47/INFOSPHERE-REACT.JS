@@ -12,35 +12,53 @@ export default function Home() {
   const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts?_limit=6')
-      .then(async (res) => {
-        const users = await axios.get('https://jsonplaceholder.typicode.com/users');
-        const postsWithMeta = res.data.map(post => {
-          const author = users.data.find(u => u.id === post.userId) || { id: 0, name: "Unknown" };
+    async function fetchDummyBlogs() {
+      try {
+        // Fetch dummy posts only for Featured Articles
+        const dummyPostsRes = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=6');
+        const usersRes = await axios.get('https://jsonplaceholder.typicode.com/users');
+        // const dummyPostsRes = await axios.get('https://dummyjson.com/posts?limit=6');
+        // const usersRes = await axios.get('https://dummyjson.com/users');
+
+        const dummyPosts = dummyPostsRes.data.map(post => {
+          const author = usersRes.data.find(user => user.id === post.userId) || { id: 0, name: "Unknown" };
           return {
-            ...post,
+            id: post.id,
+            title: post.title,
+            body: post.body,
             author,
             publishDate: new Date().toLocaleDateString(),
             image: `https://picsum.photos/seed/${post.id}/400/200`
           };
         });
-        setFeaturedPosts(postsWithMeta);
-        setAnimationKey(prev => prev + 1); // retrigger animation every fetch
-      });
+
+        setFeaturedPosts(dummyPosts);
+        setAnimationKey(prev => prev + 1);
+
+      } catch (error) {
+        console.error('Error fetching dummy blogs:', error);
+      }
+    }
+
+    fetchDummyBlogs();
   }, []);
 
   return (
     <div id="home" className="home">
-      
       <section className="welcome-banner">
-  <h1>Welcome to Infosphere</h1>
-  <p>Your trusted source for insightful blogs and up-to-date news across all your favorite categories.</p>
-  <div className="banner-highlights">
-    <span>🌐 Latest Trends</span>
-    <span>📝 Expert Articles</span>
-    <span>📊 Data-Driven Insights</span>
-  </div>
-</section>
+        <h1>Welcome to Infosphere</h1>
+        <p>Your trusted source for insightful blogs and up-to-date news across all your favorite categories.</p>
+        <div className="banner-highlights">
+          <span>🌐 Latest Trends</span>
+          <span>📝 Expert Articles</span>
+          <span>📊 Data-Driven Insights</span>
+        </div>
+      </section>
+      
+      <section id="trending-categories" className="trending-categories">
+        <h2>Trending Categories</h2>
+        <CategoryList />
+      </section>
 
       <section className="featured-articles">
         <h2>Featured Articles</h2>
@@ -48,8 +66,7 @@ export default function Home() {
           {featuredPosts.map((post, index) => {
             const middleIndex = Math.floor(featuredPosts.length / 2);
             const isMiddle = index === middleIndex;
-
-            const initialY = isMiddle ? 100 : -100; // middle from bottom, sides from top
+            const initialY = isMiddle ? 100 : -100;
 
             return (
               <motion.div
@@ -65,10 +82,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="trending-categories" className="trending-categories">
+      {/* <section id="trending-categories" className="trending-categories">
         <h2>Trending Categories</h2>
         <CategoryList />
-      </section>
+      </section> */}
 
       <section id="about-us-home" className="about-us-home">
         <About />

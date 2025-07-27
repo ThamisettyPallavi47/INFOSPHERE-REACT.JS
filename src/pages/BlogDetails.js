@@ -21,15 +21,37 @@ export default function BlogDetails() {
 
   useEffect(() => {
     async function fetchData() {
-      const postRes = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
-      const userRes = await axios.get(`https://jsonplaceholder.typicode.com/users/${postRes.data.userId}`);
-      
-      setPost({
-        ...postRes.data,
-        publishDate: new Date().toLocaleDateString(),
-        image: `https://picsum.photos/seed/${postRes.data.id}/600/300`,
-      });
-      setAuthor(userRes.data);
+      try {
+        // First fetch all backend posts to check if id matches admin blog
+        const backendRes = await axios.get('http://localhost:5000/api/blogs');
+        const backendPost = backendRes.data.find(p => p.id.toString() === id.toString());
+
+        if (backendPost) {
+          // If found in backend admin posts
+          setPost({
+            ...backendPost,
+            publishDate: backendPost.publishDate || new Date().toLocaleDateString(),
+            image: backendPost.image || `https://picsum.photos/seed/custom${id}/600/300`,
+            body: backendPost.body || backendPost.content || '',
+          });
+          setAuthor({ id: 999, name: backendPost.author || 'Admin' });
+        } else {
+          // Fallback to dummy API post
+          const postRes = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
+          const userRes = await axios.get(`https://jsonplaceholder.typicode.com/users/${postRes.data.userId}`);
+          // const postRes = await axios.get(`https://dummyjson.com/posts/${id}`);
+          // const userRes = await axios.get(`https://dummyjson.com/users/${postRes.data.userId}`);
+
+          setPost({
+            ...postRes.data,
+            publishDate: new Date().toLocaleDateString(),
+            image: `https://picsum.photos/seed/${postRes.data.id}/600/300`,
+          });
+          setAuthor(userRes.data);
+        }
+      } catch (error) {
+        console.error('Error fetching blog details:', error);
+      }
     }
     fetchData();
   }, [id]);
@@ -61,7 +83,6 @@ export default function BlogDetails() {
     }
   };
 
-  // Newsletter form submit handler (dummy)
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (email.trim() !== '') {
@@ -80,18 +101,19 @@ export default function BlogDetails() {
       <h1>{post.title}</h1>
       <img src={post.image} alt={post.title} />
       <p className="blog-meta">
-        By <Link to={`/author/${author?.id}`}>{author?.name}</Link> on {post.publishDate}
+        By <Link to={`/author/${typeof author?.id === 'number' && author.id >=1 && author.id <=10 ? author.id : author.name}`}>
+  {author?.name}
+</Link>
+  on  {post.publishDate}
       </p>
       <p className="blog-body">{post.body}</p>
 
-      {/* Interaction Buttons */}
       <div className="interactions">
         <button onClick={handleLike}>👍 Like {likes > 0 && `(${likes})`}</button>
         <button onClick={handleShare}>🔗 Share</button>
         <button onClick={toggleCommentBox}>💬 Comment</button>
       </div>
 
-      {/* Comment Box */}
       {showCommentBox && (
         <div className="comment-box">
           <textarea
@@ -105,19 +127,15 @@ export default function BlogDetails() {
         </div>
       )}
 
-      {/* Display Comments */}
       {comments.length > 0 && (
         <div className="comments-section">
           <h3>All Comments</h3>
           {comments.map((comment, index) => (
-            <div key={index} className="comment">
-              {comment}
-            </div>
+            <div key={index} className="comment">{comment}</div>
           ))}
         </div>
       )}
 
-      {/* Newsletter Subscription Form */}
       <div className="newsletter-section">
         <h3>Subscribe to our Newsletter</h3>
         {!subscribed ? (

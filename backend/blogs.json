@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "pallavi",
+    "category": "food",
+    "author": "chitti",
+    "image": "https://picsum.photos/400/200",
+    "content": "shbxjcnkiud8y7tshcbxjnkiosuydf",
+    "date": "27/7/2025"
+  },
+  {
+    "id": 2,
+    "title": "famous book",
+    "category": "book",
+    "author": "chitti",
+    "image": "https://picsum.photos/400/200",
+    "content": "this is a famous book",
+    "date": "27/7/2025"
+  },
+  {
+    "id": 3,
+    "title": "famous books",
+    "category": "books",
+    "author": "chitti",
+    "image": "https://picsum.photos/400/200",
+    "content": "this is a famous book",
+    "date": "27/7/2025"
+  },
+  {
+    "id": 4,
+    "title": "science",
+    "category": "education",
+    "author": "john",
+    "image": "https://picsum.photos/400/200",
+    "content": "this is the science",
+    "date": "27/7/2025"
+  }
+]
