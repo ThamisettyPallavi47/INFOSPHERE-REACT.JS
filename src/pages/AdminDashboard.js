@@ -3,6 +3,10 @@ import React, { useState, useEffect } from 'react';
 import '../pages/styles/AdminDashboard.css';
 import axios from 'axios';
 
+const baseURL = window.location.hostname === 'localhost'
+  ? 'http://localhost:5000'
+  : process.env.REACT_APP_API_BASE_URL;
+
 const AdminDashboard = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
@@ -23,7 +27,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchAuthors = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/authors');
+        const res = await axios.get(`${baseURL}/api/authors`);
         const names = res.data.map((a) => a.name.toLowerCase());
         setExistingAuthors(names);
       } catch (err) {
@@ -59,7 +63,7 @@ const AdminDashboard = () => {
     try {
       // If new author, add author info to DB
       if (isNewAuthor) {
-        await axios.post('http://localhost:5000/api/authors', {
+        await axios.post(`${baseURL}/api/authors`, {
           name: author,
           email: authorEmail,
           phone: authorPhone,
@@ -67,7 +71,7 @@ const AdminDashboard = () => {
         });
       }
 
-      const response = await axios.post('http://localhost:5000/api/blogs', newBlog);
+      const response = await axios.post(`${baseURL}/api/blogs`, newBlog);
       console.log('Blog added:', response.data);
       alert('✅ Blog successfully added!');
 

@@ -17,8 +17,7 @@ export default function Home() {
         // Fetch dummy posts only for Featured Articles
         const dummyPostsRes = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=6');
         const usersRes = await axios.get('https://jsonplaceholder.typicode.com/users');
-        // const dummyPostsRes = await axios.get('https://dummyjson.com/posts?limit=6');
-        // const usersRes = await axios.get('https://dummyjson.com/users');
+        
 
         const dummyPosts = dummyPostsRes.data.map(post => {
           const author = usersRes.data.find(user => user.id === post.userId) || { id: 0, name: "Unknown" };

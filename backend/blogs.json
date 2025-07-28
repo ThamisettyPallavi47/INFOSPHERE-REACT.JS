@@ -34,5 +34,32 @@
     "image": "https://picsum.photos/400/200",
     "content": "this is the science",
     "date": "27/7/2025"
+  },
+  {
+    "id": 5,
+    "title": "kerala",
+    "category": "travel",
+    "author": "chitti",
+    "image": "https://picsum.photos/400/200",
+    "content": "kerala is a beautiful place to visit ",
+    "date": "27/07/2025"
+  },
+  {
+    "id": 6,
+    "title": "cricket",
+    "category": "sports",
+    "author": "virat",
+    "image": "https://picsum.photos/400/200",
+    "content": "cricket is not a game it is an emotion",
+    "date": "28/7/2025"
+  },
+  {
+    "id": 7,
+    "title": "hockey",
+    "category": "sports",
+    "author": "virat",
+    "image": "https://picsum.photos/400/200",
+    "content": "hockey is a indian national game",
+    "date": "28/7/2025"
   }
 ]
