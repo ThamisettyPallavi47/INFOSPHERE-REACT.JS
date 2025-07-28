@@ -81,10 +81,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section id="trending-categories" className="trending-categories">
-        <h2>Trending Categories</h2>
-        <CategoryList />
-      </section> */}
+     
 
       <section id="about-us-home" className="about-us-home">
         <About />
