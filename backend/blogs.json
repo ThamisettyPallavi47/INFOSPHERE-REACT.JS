@@ -61,5 +61,23 @@
     "image": "https://picsum.photos/400/200",
     "content": "hockey is a indian national game",
     "date": "28/7/2025"
+  },
+  {
+    "id": 8,
+    "title": "nature",
+    "category": "science",
+    "author": "chitti",
+    "image": "https://picsum.photos/400/200",
+    "content": "this a nature category",
+    "date": "2/8/2025"
+  },
+  {
+    "id": 9,
+    "title": "chatgpt",
+    "category": "technology",
+    "author": "sam atlman",
+    "image": "https://picsum.photo",
+    "content": "it is a AI tool.most of the members are using this tool.",
+    "date": "2/8/2025"
   }
 ]

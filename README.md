@@ -23,9 +23,13 @@ It supports blog categories, featured articles, article details, and includes bo
   - Search functionality (title/keyword-based)
 - 📝 **Blog Post Details Page**
   - Full blog post content (image, title, date, author)
-  - Related posts section (optional)
-- 👤 **Author Page** (optional)
+  - Related posts section 
+- 👤 **Author Page** 
   - Posts by the same author
+ -🛠️ **Admin Dashboard**
+  - Add new blog posts (with Node.js backend)
+  - View and manage existing posts
+  - Simple and clean interface for admin controls
 - 🌘 **Dark/Light Mode Toggle**
 - ❤️ **Like, Share, Comment UI** (no backend, UI only)
 - 🔍 **Search Bar** to find blog posts by keyword
@@ -58,6 +62,9 @@ It supports blog categories, featured articles, article details, and includes bo
 ### 📖 About Page
 ![Details](./screenshots/aboutus.png)
 
+### 📬 Admin Page
+![Admin](./screenshots/admin.png)
+
 ### 📬 Contact Page
 ![Contact](./screenshots/contact.png)
 
@@ -81,6 +88,8 @@ It supports blog categories, featured articles, article details, and includes bo
 
 ## 🧪 Run Locally
 
+### 🔹 Frontend
+
 ```bash
 # 1. Clone the repo
 git clone https://github.com/ThamisettyPallavi47/INFOSPHERE-REACT.JS
@@ -93,6 +102,24 @@ npm install
 
 # 4. Start development server
 npm start
+```
+
+### 🔹 Backend
+
+```bash
+# 1. Open a new terminal
+# 2. Navigate to the backend folder (create one if not already done)
+cd backend
+
+# 3. Install backend dependencies
+npm install
+
+# 4. Start the backend server
+node server.js
+
+# Optional: Use nodemon for auto-restart during development
+npx nodemon server.js
+```
 
 
 ## 🚀 Deploying to GitHub Pages
